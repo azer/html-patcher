@@ -1,6 +1,6 @@
 ## html-patcher
 
-Virtual DOM Diff & Patch with HTML Templates. Based on [virtual-dom](http://npmjs.org/virtual-dom)
+Virtual DOM Diff & Patch with HTML Templates. Based on [virtual-dom](http://npmjs.org/virtual-dom) and [sax](http://npmjs.org/sax)
 
 ## Install
 
