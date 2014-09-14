@@ -1,0 +1,30 @@
+{
+  "name": "html-patcher",
+  "version": "0.0.0",
+  "description": "Virtual DOM Diff & Patch with HTML Templates",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "keywords": [
+    "html",
+    "virtual dom",
+    "domdiff",
+    "dom diffing",
+    "patch",
+    "virtualdom"
+  ],
+  "repository": {
+    "url": "git@github.com:azer/html-patcher.git",
+    "type": "git"
+  },
+  "author": "azer",
+  "license": "BSD",
+  "dependencies": {
+    "htmltree": "0.0.4",
+    "virtual-dom": "0.0.20"
+  },
+  "devDependencies": {
+    "prova": "^1.14.0"
+  }
+}
