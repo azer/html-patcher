@@ -28,4 +28,4 @@ See `test.js` for more info.
 
 ## Links
 
-- [JSFiddle Benchmark](http://jsfiddle.net/qwndkw43/)
+- [JSFiddle Benchmark](http://jsfiddle.net/gr4rehhg/)
