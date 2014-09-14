@@ -1,6 +1,6 @@
 ## html-patcher
 
-Virtual DOM Diff & Patch with HTML Templates. Based on [virtual-dom](http://npmjs.org/virtual-dom) and [sax](http://npmjs.org/sax)
+Virtual DOM Diff & Patch with HTML Templates. Based on [virtual-dom](http://npmjs.org/virtual-dom)
 
 ## Install
 
@@ -25,3 +25,7 @@ function render () {
 ```
 
 See `test.js` for more info.
+
+## Links
+
+- [JSFiddle Benchmark](http://jsfiddle.net/qwndkw43/)
