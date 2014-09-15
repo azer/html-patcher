@@ -21,11 +21,10 @@
   "author": "azer",
   "license": "BSD",
   "dependencies": {
-    "htmltree": "0.0.4",
-    "virtual-dom": "0.0.20"
+    "virtual-dom": "0.0.20",
+    "virtual-html": "0.0.0"
   },
   "devDependencies": {
-    "prova": "^1.14.0",
-    "virtual-html": "0.0.0"
+    "prova": "^1.14.0"
   }
 }
