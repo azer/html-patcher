@@ -80,10 +80,10 @@ function basic (content) {
 }
 
 function list (content) {
-  var html = '<ul>';
+  var html = '<ul class="foo">';
 
   html += content.map(function (el) {
-    return '<li>' + el + '</li>';
+    return '<li class="bar">' + el + '</li>';
   }).join('\n');
 
   html += '</ul>';
