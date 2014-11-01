@@ -22,9 +22,9 @@
   "license": "BSD",
   "dependencies": {
     "virtual-dom": "0.0.20",
-    "virtual-html": "0.0.0"
+    "virtual-html": "0.1.x"
   },
   "devDependencies": {
-    "prova": "^1.14.0"
+    "prova": "^1.15.0"
   }
 }

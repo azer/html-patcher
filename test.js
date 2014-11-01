@@ -94,7 +94,7 @@ function list (content) {
 function countback (n) {
   var size = 48 - (n * 5);
   var colors = ['red', 'blue', 'green'];
-  return '<h1 style="font-size: ' + size + 'px; color: ' + colors[n - 1] + ';">' + n + ' </h1>';
+  return '<h1 data-n="' + n + '" style="font-size: ' + size + 'px; color: ' + colors[n - 1] + ';">' + n + ' </h1>';
 }
 
 function clear () {
