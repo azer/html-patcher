@@ -13,11 +13,11 @@ $ npm install html-patch
 ```js
 var patcher = require('html-patcher')
 
-var patch = patcher(document.body, render())
-
-setInterval(function () {
-  patch(render())
-}, 1000);
+patcher(document.body, render(), function () {
+  setInterval(function () {
+    patch(render())
+  }, 1000);
+})
 
 function render () {
   return '<h1>' + Date.now() +  '</h1>';
