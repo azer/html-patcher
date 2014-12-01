@@ -13,7 +13,9 @@ $ npm install html-patch
 ```js
 var patcher = require('html-patcher')
 
-patcher(document.body, render(), function () {
+patcher(document.body, render(), function (error, patch) {
+  if (error) throw error;
+
   setInterval(function () {
     patch(render())
   }, 1000);
