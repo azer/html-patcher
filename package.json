@@ -21,8 +21,8 @@
   "author": "azer",
   "license": "BSD",
   "dependencies": {
-    "virtual-dom": "0.0.20",
-    "virtual-html": "0.1.x"
+    "virtual-dom": "^2.0.1",
+    "virtual-html": "^1.2.0"
   },
   "devDependencies": {
     "prova": "^1.15.0"
