@@ -1,6 +1,6 @@
 {
   "name": "html-patcher",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Virtual DOM Diff & Patch with HTML Templates",
   "main": "index.js",
   "scripts": {
