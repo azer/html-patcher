@@ -5,30 +5,28 @@ var virtualHTML = require("virtual-html");
 
 module.exports = newPatch;
 
-function newPatch (parentNode, html, callback) {
+function newPatch (parentNode, html) {
   var tree;
   var rootNode;
 
-  patch(html, callback);
+  patch(html);
 
   return patch;
 
-  function patch (newHtml, callback) {
-    virtualHTML(newHtml || html, function (error, vdom) {
-      if (error) return callback && callback(error, patch);
+  function patch (newHtml) {
+    var vdom = virtualHTML(newHtml || html);
 
-      if (!tree) {
-        tree = vdom;
-        rootNode = createRootNode(vdom);
-        parentNode.appendChild(rootNode);
-        return callback && callback(undefined, patch);
-      }
-
-      var patches = diff(tree, vdom);
-      applyPatches(rootNode, patches);
+    if (!tree) {
       tree = vdom;
+      rootNode = createRootNode(vdom);
+      parentNode.appendChild(rootNode);
+      return patch;
+    }
 
-      callback && callback(undefined, patch);
-    });
+    var patches = diff(tree, vdom);
+    applyPatches(rootNode, patches);
+    tree = vdom;
+
+    return patch;
   }
 }

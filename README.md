@@ -10,16 +10,16 @@ $ npm install html-patch
 
 ## Usage
 
+A simple app to show epoch time every second:
+
 ```js
 var patcher = require('html-patcher')
 
-patcher(document.body, render(), function (error, patch) {
-  if (error) throw error;
+var patch = patcher(document.body, render());
 
-  setInterval(function () {
-    patch(render())
-  }, 1000);
-})
+setInterval(function () {
+  patch(render())
+}, 1000);
 
 function render () {
   return '<h1>' + Date.now() +  '</h1>';
@@ -27,7 +27,3 @@ function render () {
 ```
 
 See `test.js` for more info.
-
-## Links
-
-- [JSFiddle Benchmark](http://jsfiddle.net/gr4rehhg/)

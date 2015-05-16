@@ -5,50 +5,40 @@ var fruits = ['apple', 'grape', 'orange'];
 var moreFruits = ['apple', 'grape', 'cherry', 'melon', 'orange'];
 
 test('Basic DOM diffing and patching', function (t) {
-  t.plan(5);
+  t.plan(3);
   clear();
 
-  patcher(document.body, basic('hi'), function (err, patch) {
-    t.error(err);
-    t.equal(document.body.innerHTML.trim(), '<h1>hi</h1>');
+  var patch = patcher(document.body, basic('hi'));
+  t.equal(document.body.innerHTML.trim(), '<h1>hi</h1>');
 
-    var root = document.querySelector('basic');
+  var root = document.querySelector('basic');
 
-    patch(basic('yo'), function (err) {
-      t.error(err);
-      t.equal(document.body.innerHTML.trim(), '<h1>yo</h1>');
-      t.equal(document.querySelector('basic'), document.querySelector('basic'));
-    });
-
-  });
+  patch(basic('yo'));
+  t.equal(document.body.innerHTML.trim(), '<h1>yo</h1>');
+  t.equal(document.querySelector('basic'), document.querySelector('basic'));
 });
 
 test('Lists', function (t) {
-  t.plan(11);
+  t.plan(9);
   clear();
 
-  patcher(document.body, list(fruits), function (err, patch) {
-    t.error(err);
+  var patch = patcher(document.body, list(fruits));
+  t.equal(document.body.innerHTML.trim(), list(fruits));
 
-    t.equal(document.body.innerHTML.trim(), list(fruits));
+  Array.prototype.forEach.call(document.querySelectorAll('li'), function (el) {
+    el.style.color = 'purple';
+    t.equal(el.style.color, 'purple');
+  });
 
-    Array.prototype.forEach.call(document.querySelectorAll('li'), function (el) {
-      el.style.color = 'purple';
-      t.equal(el.style.color, 'purple');
-    });
+  patch(list(moreFruits));
 
-    patch(list(moreFruits), function (err) {
-      t.error(err);
+  Array.prototype.forEach.call(document.querySelectorAll('li'), function (el, ind) {
+    if (ind > 2) { // cherry, melon or orange
+      t.notOk(el.style.color);
+      return;
+    };
 
-      Array.prototype.forEach.call(document.querySelectorAll('li'), function (el, ind) {
-        if (ind > 2) { // cherry, melon or orange
-          t.notOk(el.style.color);
-          return;
-        };
-
-        t.equal(el.style.color, 'purple');
-      });
-    });
+    t.equal(el.style.color, 'purple');
   });
 });
 
@@ -72,7 +62,6 @@ test('Countback example', function (t) {
 
     return countback(n--);
   }
-
 });
 
 function basic (content) {
